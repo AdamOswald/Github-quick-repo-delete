@@ -13,7 +13,7 @@ const Card = ({ props }) => {
   const handleDelete = async (repo) => {
     console.log(repo);
     setdisplay("none");
-    await octokit.request('DELETE /repos/AdamOswald/${repo}');
+    await octokit.request("DELETE /repos/AdamOswald/${repo}");
     // .then(() => setdisplay("none"))
     // .then(() => refreshPage());
   };
