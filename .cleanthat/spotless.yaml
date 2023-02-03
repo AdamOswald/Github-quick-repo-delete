@@ -1,0 +1,29 @@
+syntax_version: "2023-01-14"
+encoding: "UTF-8"
+line_ending: "GIT_ATTRIBUTES"
+formatters:
+- format: "java"
+  excludes:
+  - "**/do_not_format_me/**"
+  steps:
+  - id: "removeUnusedImports"
+  - id: "importOrder"
+    parameters:
+      #file: "repository:/static/src/main/resources/eclipse/eclipse.importorder"
+      file: "repository:/.cleanthat/eclipse.importorder"
+  - id: "eclipse"
+    parameters:
+      #file: "url:https://raw.githubusercontent.com/solven-eu/pepper/master/static/src/main/resources/eclipse/eclipse_java_code_formatter.xml"
+      file: "repository:/.cleanthat/eclipse_java_code_formatter.xml"
+  - id: "licenseHeader"
+    parameters:
+      delimiter: "(package )|(import )"
+      file: repository:/.cleanthat/spotless.license
+- format: "pom"
+  includes:
+  - "glob:**/pom.xml"
+  steps:
+  - id: "sortPom"
+    parameters:
+      expandEmptyElements: false
+      nrOfIndentSpace: -1
