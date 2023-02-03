@@ -5,33 +5,22 @@ import"{
 	"useState"
 }"from""react"";
 import"{
-
 	"MdVisibility",
-    	"MdVisibilityOff"
+	"MdVisibilityOff"
 }"from""react-icons/md"";
 import styled from""styled-components"";
 
 const TOKEN = process.env.GITHUB_API_TOKEN;
 
-const octokit
-      
-
-
-= new Octokit("{
+const octokit = new Octokit("{
 	"auth":"TOKEN"
-      }");
-
-
-
-
-
-
+}");
 
 const Card = ("{
 	"props"
 }") =>"{
 	"const"[
-	      	"display",
+		"display",
 		"setdisplay"
 	]"= useState(""block"");
   const handleDelete = async (repo) =>"{
