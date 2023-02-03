@@ -1,12 +1,10 @@
-import styled from "styled-components";
-import { MdVisibility, MdVisibilityOff } from "react-icons/md";
 import { Octokit } from "@octokit/core";
 import { useState } from "react";
+import { MdVisibility, MdVisibilityOff } from "react-icons/md";
+import styled from "styled-components";
 
 const TOKEN = process.env.GITHUB_API_TOKEN;
-const octokit = new Octokit({
-  auth: TOKEN
-});
+const octokit = new Octokit({ auth: TOKEN });
 
 const Card = ({ props }) => {
   const [display, setdisplay] = useState("block");
@@ -14,7 +12,7 @@ const Card = ({ props }) => {
   const handleDelete = async (repo) => {
     console.log(repo);
     setdisplay("none");
-   await octokit.request(`DELETE /repos/AdamOswald/${repo}`);
+    await octokit.request(`DELETE /repos/AdamOswald/${repo}`);
     // .then(() => setdisplay("none"))
     // .then(() => refreshPage());
   };
