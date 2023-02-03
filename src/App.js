@@ -21,7 +21,7 @@ export default function App() {
     }
   };
 
-  const GITHUB_API_TOKEN = "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";
+  const GITHUB_API_TOKEN = "your-access-token";
 
   const getData = async () => {
     await axios
