@@ -9,7 +9,6 @@ const octokit = new Octokit({ auth: TOKEN });
 
 const Card = ({ props }) => {
   const [display, setdisplay] = useState("block");
-
   const handleDelete = async (repo) => {
     console.log(repo);
     setdisplay("none");
@@ -25,11 +24,10 @@ const Card = ({ props }) => {
   return (
     <>
       <Container visible={display}>
-        <h3>{props.name}</h3>
-        <p>{props.created_at}</p>
-        <button onClick={() => handleDelete(props.name)}>DELETE</button>
-        {/* {props.visibility === "public" ? <MdVisibility /> : <MdVisibilityOff />} */}
-      </Container>
+        <h3> {props.name} </h3> <p> {props.created_at} </p>{" "}
+        <button onClick={() => handleDelete(props.name)}> DELETE </button>{" "}
+        {/* {props.visibility === "public" ? <MdVisibility /> : <MdVisibilityOff />} */}{" "}
+      </Container>{" "}
     </>
   );
 };
