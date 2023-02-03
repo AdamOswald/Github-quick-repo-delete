@@ -1,8 +1,11 @@
 import "./styles.css";
-import { useEffect, useState } from "react";
-import axios from "axios";
-import Card from "../src/components/Card";
+
 import { Octokit } from "@octokit/core";
+import axios from "axios";
+import { useEffect, useState } from "react";
+
+import Card from "../src/components/Card";
+
 require("dotenv").config();
 
 export default function App() {
