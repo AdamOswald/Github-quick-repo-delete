@@ -1,8 +1,8 @@
 import "./styles.css";
 
-import {Octokit} from "@octokit/core";
+import { Octokit } from "@octokit/core";
 import axios from "axios";
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 
 import Card from "../src/components/Card";
 
@@ -25,8 +25,8 @@ export default function App() {
 
   const getData = async () => {
     await axios
-        .get(`https://api.github.com/users/AdamOswald/repos?per_page=100`)
-        .then((response) => setRepos(response));
+      .get(`https://api.github.com/users/AdamOswald/repos?per_page=100`)
+      .then((response) => setRepos(response));
   };
 
   return (
@@ -56,8 +56,7 @@ export default function App() {
       {repos &&
         repos.data.map((val, key) => {
           return <Card key={key} props={val} />;
-})
-}
-< /div>
+        })}
+    </div>
   );
 }
