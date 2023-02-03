@@ -21,7 +21,7 @@ export default function App() {
     }
   };
 
-  const GITHUB_API_TOKEN = "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";
+  const GITHUB_API_TOKEN = "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";
 
   const getData = async () => {
     await axios
