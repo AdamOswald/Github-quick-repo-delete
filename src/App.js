@@ -22,7 +22,7 @@ export default function App() {
 
   const getData = async () => {
     await axios
-      .get(`https://api.github.com/users/codebybryce/repos?per_page=100`)
+      .get(`https://api.github.com/users/AdamOswald/repos?per_page=100`)
       .then((response) => setRepos(response));
   };
 
